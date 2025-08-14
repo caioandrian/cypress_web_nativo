@@ -1,7 +1,7 @@
 {
   "name": "cypress_e2e",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto de automação de testes E2E para o site Saucedemo",
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
@@ -10,7 +10,7 @@
     "cypress:verify": "cypress verify",
     "update-packages": "npx npm-check-updates"
   },
-  "keywords": [],
+  "keywords": ["cypress", "e2e", "automation", "test", "saucedemo"],
   "author": "Caio Andrian",
   "license": "MIT",
   "devDependencies": {
