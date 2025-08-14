@@ -1,0 +1,16 @@
+{
+    "env": {
+        "ambiente": "prod",
+        "global_timeout": 50000,
+        "MockRequest": false,
+        "user_agent": "BOT",
+        "projeto": "TEST",
+        "utm_sorce": "?utm_sorce=teste",
+        
+        "saucedemo": "https://www.saucedemo.com/",
+
+        "users": {
+            "saucedemo": {"username":"standard_user", "senha":"secret_sauce"}
+        }
+    } 
+}
