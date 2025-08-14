@@ -20,7 +20,7 @@ E-commerce (https://www.saucedemo.com)<br>
 
 | Branch                               | Descrição                                                                                                  |                                                                                                       |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Main**                   |           Exemplo básico do cypress.                                                  | [link](https://github.com/caioandrian/cypress_e2e/tree/main)                                     |
+| **Main**                   |           Exemplo básico do cypress.                                                  | [link](https://github.com/caioandrian/cypress_web_nativo/tree/main)                                     |
 
 ---
 
