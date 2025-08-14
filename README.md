@@ -2,18 +2,17 @@
 
 ![Cypress](https://img.shields.io/badge/Cypress-E2E%20Testing-green?style=flat&logo=cypress) 
 ![Cucumber](https://img.shields.io/badge/Cucumber-BDD-blue?style=flat&logo=cucumber)
-![Node.js](https://img.shields.io/badge/Node.js-v14.x%20LTS-green?style=flat&logo=node.js)
+![Node.js](https://img.shields.io/badge/Node.js-v18.x%20LTS-green?style=flat&logo=node.js)
 ![QA Automation](https://img.shields.io/badge/QA%20Automation-Continuous%20Testing-orange?style=flat&logo=testing-library)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=flat)
 
-Este repositório contém diferentes implementações de automação de testes E2E usando Cypress, com exemplos variando entre Cypress Nativo, integração com Cucumber (BDD) e relatórios customizados para o New Relic.
+Este repositório contém diferentes implementações de automação de testes E2E usando Cypress e relatórios customizados para o New Relic.
 
 ---
 
 Sites usados nos exemplos:
 
 E-commerce (https://www.saucedemo.com)<br>
-Sistema bancário (https://barrigareact.wcaquino.me)
 
 ---
 
@@ -22,9 +21,6 @@ Sistema bancário (https://barrigareact.wcaquino.me)
 | Branch                               | Descrição                                                                                                  |                                                                                                       |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | **Main**                   |           Exemplo básico do cypress.                                                  | [link](https://github.com/caioandrian/cypress_e2e/tree/main)                                     |
-| **Cypress Nativo**  | Exemplo do cypress sem bdd.                                      | [link](https://github.com/caioandrian/cypress_e2e/tree/saucedemo-cypress-nativo)             |
-| **Cypress com BDD**                  | Exemplo do cypress usando cucumber, multi-reports html e page object.                        | [link](https://github.com/caioandrian/cypress_e2e/tree/cypress-cucumber-bdd)                    |
-| **Report para New Relic**  | Exemplo de integração do cypress chamando API do new relic. CI/CD                                         | [link](https://github.com/caioandrian/cypress_e2e/tree/report-to-newrelic)             |
 
 ---
 
@@ -36,9 +32,9 @@ Este guia ajudará você a instalar as ferramentas necessárias e executar o pro
 
 Antes de começar, certifique-se de ter o seguinte instalado:
 
-- **Node.js (versão LTS)** - [Download aqui](https://nodejs.org/en/)
+- **Node.js (versão 18.x LTS)** - [Download aqui](https://nodejs.org/en/)
 - **Visual Studio Code (VS Code)** - [Download aqui](https://code.visualstudio.com/download)
-- **Cypress** (Será instalado como dependência do projeto)
+- **Cypress** (versão ^14.4.1, será instalado como dependência do projeto)
 
 ### 🚀 Passos de Instalação
 
@@ -88,3 +84,20 @@ Lista de plugins que podem auxiliar no desenvolvimento da automação.
 - ES6 Mocha Snippets
 
 --- FIM ---
+
+### 📦 Dependências Principais
+
+Este projeto utiliza as seguintes dependências principais:
+
+- **axios**: ^1.7.9
+- **mocha**: ^10.8.2
+- **eslint**: ^9.15.0
+- **cypress**: ^14.4.1
+
+### 🛠️ Scripts Disponíveis
+
+Os seguintes scripts estão disponíveis para facilitar o uso do Cypress:
+
+- `cy:open`: Abre o Cypress em modo interativo.
+- `cy:open-prod`: Abre o Cypress em modo interativo com configuração de produção.
+- `cy:run-saucedemo`: Executa os testes do saucedemo em modo headless no Chrome.
