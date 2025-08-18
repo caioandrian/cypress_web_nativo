@@ -2,8 +2,6 @@
 
 const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');  
 const exec = require('child_process').execSync;  
-const { isFileExist, findFiles } = require('cy-verify-downloads');
-const { removeDirectory } = require('cypress-delete-downloads-folder');
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -49,8 +47,6 @@ module.exports = (on, config) => {
     await exec("npx jrm ./cypress/reports/junitreport.xml ./cypress/reports/junit/*.xml");
     await afterRunHook();
   });
-
-  on('task', { isFileExist, findFiles, removeDirectory});
 
   const file = config.env.fileConfig || 'hmg';
   return getConfigurationByFile(file);

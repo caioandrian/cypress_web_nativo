@@ -15,9 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
-
-require('cy-verify-downloads').addCustomCommand();
-require('cypress-delete-downloads-folder').addCustomCommand();
+import 'cypress-mochawesome-reporter/register';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from

@@ -24,9 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-require('cypress-xpath');
-import 'cypress-file-upload';
-
 Cypress.Commands.add('stepNotImplemented', () => { 
   console.log('O step não foi implementado!');
   cy.log('O step não foi implementado!');
