@@ -38,3 +38,22 @@ Cypress.Commands.add('acessar_dominio_externo', (site, sent_args = {}) => {
     cy.visit('/');
   });
 });
+
+Cypress.Commands.add('setupAmbienteTeste', () => {
+  cy.window().then((win) => {
+    win.performance?.setResourceTimingBufferSize?.(0);
+    win.gc && win.gc();
+
+    Cypress.automation('remote:debugger:protocol', {
+      command: 'Network.clearBrowserCache',
+      params: {}
+    });
+  });
+});
+
+Cypress.Commands.add('setupAmbienteBefore', () => {
+  Cypress.session.clearAllSavedSessions();
+  cy.clearAllSessionStorage();
+  cy.clearCookies();
+  cy.clearLocalStorage();
+});
