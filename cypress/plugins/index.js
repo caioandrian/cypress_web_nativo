@@ -15,6 +15,44 @@ function getConfigurationByFile(file) {
 }
 
 module.exports = (on, config) => {
+  on('after:screenshot', (details) => {
+    // Renomeia o arquivo de screenshot para usar apenas o nome do teste (it)
+    console.log('Screenshot capturado - caminho original:', details.path);
+    
+    if (details.path && details.path.includes(' -- ')) {
+      try {
+        // Normaliza o caminho para funcionar em Windows e Linux
+        const normalizedPath = details.path.replace(/\\/g, '/');
+        const pathParts = normalizedPath.split('/');
+        const fileName = pathParts[pathParts.length - 1];
+        
+        console.log('Nome do arquivo:', fileName);
+        
+        if (fileName.includes(' -- ')) {
+          const newFileName = fileName.split(' -- ')[1];
+          const dirPath = pathParts.slice(0, -1).join(path.sep);
+          
+          // Constrói o novo caminho usando path.join para compatibilidade
+          const newPath = path.join(dirPath, newFileName);
+          
+          console.log('Novo caminho:', newPath);
+          
+          // Move o arquivo para o novo nome
+          if (fs.existsSync(details.path)) {
+            fs.moveSync(details.path, newPath, { overwrite: true });
+            console.log('Arquivo renomeado com sucesso');
+            return { path: newPath };
+          } else {
+            console.log('Erro: Arquivo não encontrado no caminho', details.path);
+          }
+        }
+      } catch (error) {
+        console.error('Erro ao renomear screenshot:', error);
+      }
+    }
+    return { path: details.path };
+  });
+  
   on('before:browser:launch', (browser = {}, launchOptions) => {
     if (browser.family === 'chromium' && browser.name !== 'electron') {
       //launchOptions.args.push("--incognito");

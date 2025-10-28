@@ -9,6 +9,7 @@ module.exports = defineConfig({
   includeShadowDom: true,
   numTestsKeptInMemory: 5,
   screenshotsFolder: 'cypress/reports/screenshots',
+  screenshotOnRunFailure: true,
   video: false,
   modifyObstructiveCode: false,
   experimentalSourceRewriting: false,
