@@ -26,21 +26,16 @@ module.exports = (on, config) => {
         const pathParts = normalizedPath.split('/');
         const fileName = pathParts[pathParts.length - 1];
         
-        console.log('Nome do arquivo:', fileName);
-        
         if (fileName.includes(' -- ')) {
           const newFileName = fileName.split(' -- ')[1];
           const dirPath = pathParts.slice(0, -1).join(path.sep);
           
           // Constrói o novo caminho usando path.join para compatibilidade
           const newPath = path.join(dirPath, newFileName);
-          
-          console.log('Novo caminho:', newPath);
-          
+                    
           // Move o arquivo para o novo nome
           if (fs.existsSync(details.path)) {
             fs.moveSync(details.path, newPath, { overwrite: true });
-            console.log('Arquivo renomeado com sucesso');
             return { path: newPath };
           } else {
             console.log('Erro: Arquivo não encontrado no caminho', details.path);
