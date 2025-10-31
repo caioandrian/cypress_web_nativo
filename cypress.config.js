@@ -11,6 +11,7 @@ module.exports = defineConfig({
   screenshotsFolder: 'cypress/reports/screenshots',
   screenshotOnRunFailure: true,
   video: false,
+  videoCompression: 32,
   modifyObstructiveCode: false,
   experimentalSourceRewriting: false,
   reporter: 'cypress-mochawesome-reporter',
